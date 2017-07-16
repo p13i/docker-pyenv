@@ -16,3 +16,6 @@ RUN apt-get install -y bash
 RUN curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 ENV PATH="/root/.pyenv/bin:$PATH"
 RUN eval "$(pyenv init -)" && eval "$(pyenv virtualenv-init -)"
+
+# Install Python pip
+RUN apt-get install -y python-pip && pip install --upgrade pip
